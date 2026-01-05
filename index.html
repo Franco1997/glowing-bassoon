@@ -39,7 +39,7 @@
       <div class="trust">
         <div class="trust-row">
           <div><strong>Maintained by:</strong> Franco Stander</div>
-          <div><strong>Last update:</strong> <span id="last-updated">—</span></div>
+          <div><strong>Last update:</strong> <span id="last-updated">2026-01-05</span></div>
         </div>
         <p class="muted small">This site is a convenience tool. Always follow label instructions and consult regulators for official registration status.</p>
       </div>
@@ -69,14 +69,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    fetch('data/Avocado registred Chemicals.csv', {cache: "no-store"}).then(r=>{
-      if (!r.ok) return;
-      return r.text();
-    }).then(txt=>{
-      if (!txt) return;
-      const now = new Date();
-      document.getElementById('last-updated').textContent = now.toLocaleDateString();
-    }).catch(()=>{});
+    // Last-updated intentionally set to today's date (2026-01-05)
   </script>
 
   <script src="app.js"></script>
