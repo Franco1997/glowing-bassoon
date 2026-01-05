@@ -1,0 +1,30 @@
+[
+  {
+    "trade_name": "Bioneem",
+    "active_ingredient": "Azadirachtin",
+    "category": "Insecticide",
+    "target_pest_disease": "False codling moth",
+    "registration_notes": "Use according to label. Avoid application during flowering."
+  },
+  {
+    "trade_name": "GF-120 NF",
+    "active_ingredient": "Spinosad",
+    "category": "Insecticide",
+    "target_pest_disease": "Fruit fly - Mediterranean fruit fly",
+    "registration_notes": "Bait spray. Follow withholding period."
+  },
+  {
+    "trade_name": "Marksman 240 SC",
+    "active_ingredient": "Methoxyfenozide",
+    "category": "Insecticide",
+    "target_pest_disease": "False codling moth",
+    "registration_notes": "Apply as per integrated pest management guidelines."
+  },
+  {
+    "trade_name": "Switch",
+    "active_ingredient": "Cyprodinil + fludioxonil",
+    "category": "Fungicide",
+    "target_pest_disease": "Anthracnose",
+    "registration_notes": "Pre-harvest use only."
+  }
+]
