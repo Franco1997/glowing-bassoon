@@ -1,0 +1,26 @@
+[
+  {
+    "trade_name": "AvocadoGuard 200",
+    "active_ingredient": "Imidacloprid",
+    "chemical_class": "Neonicotinoid",
+    "category": "Insecticide",
+    "target_pest_disease": "Scales, thrips",
+    "mrl_value": "0.05",
+    "mrl_unit": "mg/kg",
+    "registered": "Yes",
+    "registration_notes": "Use according to label. PHI 21 days.",
+    "references": "Registration dossier 2022"
+  },
+  {
+    "trade_name": "FungiStop",
+    "active_ingredient": "Azoxystrobin",
+    "chemical_class": "Strobilurin",
+    "category": "Fungicide",
+    "target_pest_disease": "Anthracnose",
+    "mrl_value": "0.1",
+    "mrl_unit": "mg/kg",
+    "registered": "No",
+    "registration_notes": "Under evaluation",
+    "references": ""
+  }
+]

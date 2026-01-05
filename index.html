@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avocado Chemical & MRL Search — South Africa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.28/dist/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">🥑</div>
+        <div>
+          <h1>Avocado Chemical & MRL Search</h1>
+          <p class="tag">Registered chemical products for avocados — South Africa</p>
+        </div>
+      </div>
+      <nav class="header-actions">
+        <a class="btn-ghost" href="README.md" target="_blank" rel="noopener">About / Data source</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div>
+        <h2>Find registered chemicals and MRL information quickly</h2>
+        <p class="muted">Search by active ingredient, trade name, pest/disease or category. The dataset is maintained by the site owner — check the data source for latest updates.</p>
+        <div class="hero-cta">
+          <button class="btn-primary tab" data-action="keyword">Start keyword search</button>
+          <a class="btn-outline" href="#download" onclick="document.querySelector('[data-action=download]').click()">Download full list</a>
+        </div>
+      </div>
+      <div class="trust">
+        <div class="trust-row">
+          <div><strong>Maintained by:</strong> You</div>
+          <div><strong>Data:</strong> Owner-supplied CSV</div>
+          <div><strong>Last update:</strong> <span id="last-updated">—</span></div>
+        </div>
+        <p class="muted small">This site is a convenience tool. Always follow label instructions and consult regulators for official registration status.</p>
+      </div>
+    </section>
+
+    <section class="tabs-grid">
+      <button class="tab-card" data-action="keyword"><div class="icon">🔎</div><div class="label">Search Key Word</div><div class="desc">Chemical, trade name, pest, active ingredient</div></button>
+      <button class="tab-card" data-action="insecticides"><div class="icon">🐞</div><div class="label">Search Insecticides</div><div class="desc">All insecticidal products</div></button>
+      <button class="tab-card" data-action="fungicides"><div class="icon">🍄</div><div class="label">Search Fungicides (Pre-Harvest)</div><div class="desc">Pre-harvest fungicides</div></button>
+      <button class="tab-card" data-action="postharvest"><div class="icon">📦</div><div class="label">Search Post-Harvest Chemicals</div><div class="desc">Post-harvest treatments</div></button>
+      <button class="tab-card" data-action="adjuvants"><div class="icon">🧴</div><div class="label">Search Adjuvants</div><div class="desc">Surfactants/boosters</div></button>
+      <button class="tab-card" data-action="herbicides"><div class="icon">🌾</div><div class="label">Search Herbicides</div><div class="desc">Weed control products</div></button>
+      <button class="tab-card" data-action="mrls"><div class="icon">📊</div><div class="label">Search MRL's</div><div class="desc">Maximum residue limits</div></button>
+      <button class="tab-card" data-action="download"><div class="icon">⬇️</div><div class="label">Download complete list</div><div class="desc">Download CSV or PDF</div></button>
+    </section>
+
+    <!-- existing workarea panels (app.js will show/hide them) -->
+    <div id="workarea"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Avocado Chemical Search — Data maintained by owner.</div>
+      <div class="muted small">Not official regulatory advice. Always check product label and local regulator for compliance.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    fetch('data/Avocado registred Chemicals.csv', {cache: "no-store"}).then(r=>{
+      if (!r.ok) return;
+      return r.text();
+    }).then(txt=>{
+      if (!txt) return;
+      const now = new Date();
+      document.getElementById('last-updated').textContent = now.toLocaleDateString();
+    }).catch(()=>{});
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
